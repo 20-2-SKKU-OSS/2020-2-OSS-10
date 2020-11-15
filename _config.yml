@@ -44,7 +44,8 @@ round-avatar: true
 social-network-links:
   email: false
   facebook: false
-  github: https://github.com/20-2-SKKU-OSS/2020-2-OSS-10
+  #github: https://github.com/20-2-SKKU-OSS/2020-2-OSS-10
+  github : 20-2-SKKU-OSS/2020-2-OSS-1.git
   twitter: false
 #  patreon: DeanAttali
 #  reddit: yourname
