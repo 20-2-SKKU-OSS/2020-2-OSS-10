@@ -8,4 +8,4 @@ share-img: /assets/img/path.jpg
 tags: [books, test]
 ---
 
-Pytorch Tutorial 
+Our project mainly focuses on making pytorch tutorial be more efficient education tool 
