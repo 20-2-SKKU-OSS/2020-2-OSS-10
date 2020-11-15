@@ -6,7 +6,7 @@
 # --- Required options --- #
 remote_theme: daattali/beautiful-jekyll
 url: "https://20-2-skku-oss.github.io/2020-2-OSS-10"
-baseurl: 
+baseurl:
 
 # Name of website
 title: SKKU-OSS-2020-2-Team10 Website
@@ -21,7 +21,7 @@ navbar-links:
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://20-2-skku-oss.github.io"
+  Author's home: "https://20-2-skku-oss.github.io/2020-2-OSS-10/"
 
 # --- Logo --- #
 
