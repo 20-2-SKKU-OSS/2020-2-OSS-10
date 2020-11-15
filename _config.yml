@@ -4,7 +4,7 @@
 # the initial set up you won't need to come back to this file often.
 
 # --- Required options --- #
-remote_theme: daattali/beatiful-jekyll
+remote_theme: daattali/beautiful-jekyll
 url: https://20-2-skku-oss.github.io/2020-2-OSS-10/
 baseurl: 
 
