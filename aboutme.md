@@ -3,4 +3,9 @@ layout: page
 title: About me
 subtitle: Why you'd want to go on a date with me
 ---
-### My story
+### Go Gyeong-hui
+### Kim Jin-uk
+### Lee Song-jae
+### Lee Tae-gi
+### Jeong Jae-min
+### Cho Yeong=min
