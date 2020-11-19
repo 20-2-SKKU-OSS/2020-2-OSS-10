@@ -1,14 +1,14 @@
 ---
 layout: post
-title: 1st Conference
+title: 1st Meeting
 subtitle: Pytorch tutorial
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
+thumbnail-img: /assets/img/meeting.jpg
 share-img: /assets/img/path.jpg
 tags: [books, test]
 ---
 
-First Conference : 11th week team assignment & term project plan discuss 
+First Meeting : 11th week team assignment & term project plan discuss 
 
 Contents
 1. Selected Community / Project plan 
