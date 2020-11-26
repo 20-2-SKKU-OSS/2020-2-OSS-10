@@ -13,7 +13,7 @@ tags: [books, test]
 로지스틱 회귀는 독립 변수의 선형결합을 이용하여 사건의 발생 가능성을 예측하는데 사용되는 통계 기법이다.<br>
 로지스틱 회귀의 목적은 일반적인 회귀 분석의 목표와 동일하게 종속 변수와 독립 변수간의 관계를 구체적인 함수로 나타내어 향후 예측 모델에 사용하는 것이다. 이는 독립 변수의 선형 결합으로 종속 변수를 설명한다는 관점에서는 선형 회귀 분석과 유사하다. 하지만 로지스틱 회귀는 선형 회귀 분석과는 다르게 종속 변수가 범주형 데이터를 대상으로 하며 입력 데이터가 주어졌을 때 해당 데이터의 결과가 특정 분류로 나뉘기 때문에 일종의 분류 (classification) 기법으로도 볼 수 있다.
 
-<img src="/asstes/img/Logistic%20Regression/LoR_1.jpeg" width="700" height="500" align="left">    
+<img src="/assets/img/Logistic%20Regression/LoR_1.jpeg" width="700" height="500" align="left">    
 
 
 
