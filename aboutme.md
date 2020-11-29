@@ -8,4 +8,4 @@ subtitle: Why you'd want to go on a date with me
 ### Lee Song-jae
 ### Lee Tae-gi
 ### Jeong Jae-min
-### Cho Yeong=min
+### Jo Young-min
