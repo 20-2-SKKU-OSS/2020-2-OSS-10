@@ -14,7 +14,7 @@ Linear Regression(선형회귀) : 선형회귀는 종속변수 y와 한 개 이�
 선형 회귀는 선형 예측 함수를 사용해 회귀식을 모델링하며, 알려지지 않은 파라미터는 데이터로부터 추정한다. 이렇게 만들어진 회귀식을 선형 모델이라고 한다.
 선형 회귀는 깊이있게 연구되고 널리 사용된 첫 번째 회귀분석 기법이다. 이는 알려지지 않은 파라미터에 대해 선형 관계를 갖는 모델을 세우는 것이, 비선형 관계를 갖는 모델을 세우는 것보다 용이하기 때문이다.<br>
 일반적으로 최소제곱법(least square method)을 사용해 선형 회귀 모델을 세운다. 최소제곱법 외에 다른 기법으로도 선형 회귀 모델을 세울 수 있다. 손실 함수(loss fuction)를 최소화 하는 방식으로 선형 회귀 모델을 세울 수도 있다. 최소제곱법은 선형 회귀 모델 뿐 아니라, 비선형 회귀 모델에도 적용할 수 있다. 최소제곱법과 선형 회귀는 가깝게 연관되어 있지만, 그렇다고 해서 동의어는 아니다.<br>
-<img src="https://github.com/20-2-SKKU-OSS/2020-2-OSS-10/blob/main/assets/img/Linear%20Regression/LR_1.png" width="700" height="500" align="left">    
+<img src="/assets/img/Linear Regression/LR_1.png" width="700" height="500" align="left">    
 
 
 ### 2. Examples of Linear Regression
