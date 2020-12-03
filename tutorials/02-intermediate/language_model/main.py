@@ -14,9 +14,9 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 embed_size = 128
 hidden_size = 1024
 num_layers = 1
-num_epochs = 5
+num_epochs = 5  #counts of entire dataset passed forward/backward
 num_samples = 1000     # number of words to be sampled
-batch_size = 20
+batch_size = 20 #total number of training examples in a single batch
 seq_length = 30
 learning_rate = 0.002
 
