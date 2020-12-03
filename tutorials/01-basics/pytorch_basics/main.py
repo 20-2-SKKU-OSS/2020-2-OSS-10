@@ -16,7 +16,7 @@ import torchvision.transforms as transforms
 # 5. Input pipline for custom dataset       (Line 136 to 156)
 # 6. Pretrained model                       (Line 163 to 176)
 # 7. Save and load model                    (Line 183 to 189) 
-
+# 8. Create tensor                          (Line 195 to 200)
 
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
@@ -187,3 +187,14 @@ model = torch.load('model.ckpt')
 # Save and load only the model parameters (recommended).
 torch.save(resnet.state_dict(), 'params.ckpt')
 resnet.load_state_dict(torch.load('params.ckpt'))
+
+# ================================================================== #
+#                      8. Create tensor                              #
+# ================================================================== #
+
+# Create tensors (t1 and t2 are same)
+t1 = torch.FloatTensor([0, 1, 2, 3, 4, 5, 6])
+t2 = torch.tensor(np.arange(7))
+
+# Print shape of tensors 
+print(t1.shape, t2.shape)
