@@ -211,3 +211,15 @@ print(a)
 # Create array with only '1' elements
 b = np.ones((1,2))
 print(b)
+
+# Fill array with specific number (in this case, 7)
+c = np.full((2,2), 7)
+print(c)
+
+# Create 2x2 unit matrix
+d = np.eye(2)
+print(d)
+
+# Create array filled with arbitrary values
+e = np.random.random((2,2))
+print(e)
