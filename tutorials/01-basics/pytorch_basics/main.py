@@ -9,7 +9,7 @@ import torchvision.transforms as transforms
 #                         Table of Contents                          #
 # ================================================================== #
 
-# 1. Basic autograd example 1               (Line 25 to 39)
+# 1. Basic autograd example 1               (Line 26 to 40)
 # 2. Basic autograd example 2               (Line 46 to 83)
 # 3. Loading data from numpy                (Line 90 to 97)
 # 4. Input pipline                          (Line 104 to 129)
@@ -17,7 +17,7 @@ import torchvision.transforms as transforms
 # 6. Pretrained model                       (Line 163 to 176)
 # 7. Save and load model                    (Line 183 to 189) 
 # 8. Create tensor                          (Line 195 to 200)
-# 9. Basic numpy operations                          (Line 195 to 200)
+# 9. Basic numpy operations                 (Line 195 to 200)
 
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
