@@ -17,6 +17,7 @@ import torchvision.transforms as transforms
 # 6. Pretrained model                       (Line 163 to 176)
 # 7. Save and load model                    (Line 183 to 189) 
 # 8. Create tensor                          (Line 195 to 200)
+# 9. Basic numpy operations                          (Line 195 to 200)
 
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
@@ -198,3 +199,15 @@ t2 = torch.tensor(np.arange(7))
 
 # Print shape of tensors 
 print(t1.shape, t2.shape)
+
+# ================================================================== #
+#                      9. Basic numpy operations                     #
+# ================================================================== #
+
+# Create array with only '0' elements
+a = np.zeros((2,2))
+print(a) 
+
+# Create array with only '1' elements
+b = np.ones((1,2))
+print(b)
