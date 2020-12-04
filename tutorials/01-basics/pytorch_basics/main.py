@@ -206,20 +206,30 @@ print(t1.shape, t2.shape)
 
 # Create array with only '0' elements
 a = np.zeros((2,2))
-print(a) 
+print(a)          # result "[[ 0.  0.]
+                  #          [ 0.  0.]]"
 
 # Create array with only '1' elements
 b = np.ones((1,2))
-print(b)
+print(b)          # result "[[ 1.  1.]
+                  
+
 
 # Fill array with specific number (in this case, 7)
 c = np.full((2,2), 7)
-print(c)
+print(c)          # result "[[ 7.  7.]
+                  #          [ 7.  7.]]"
+
 
 # Create 2x2 unit matrix
 d = np.eye(2)
-print(d)
+print(d)          # result "[[ 1.  0.]
+                  #          [ 0.  1.]]"
+
 
 # Create array filled with arbitrary values
 e = np.random.random((2,2))
-print(e)
+print(e)          # result "[[ 0.91940167  0.08143941]
+                  #          [ 0.68744134  0.87236687]]"
+                  # arbitrary values are filled
+
