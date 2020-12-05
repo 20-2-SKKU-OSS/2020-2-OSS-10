@@ -9,21 +9,21 @@ import torchvision.transforms as transforms
 #                         Table of Contents                          #
 # ================================================================== #
 
-# 1. Basic autograd example 1               (Line 26 to 40)
-# 2. Basic autograd example 2               (Line 46 to 83)
-# 3. Loading data from numpy                (Line 90 to 97)
-# 4. Input pipline                          (Line 104 to 129)
-# 5. Input pipline for custom dataset       (Line 136 to 156)
-# 6. Pretrained model                       (Line 163 to 176)
-# 7. Save and load model                    (Line 183 to 189) 
-# 8. Create tensor                          (Line 195 to 200)
-# 9. Basic numpy operations                 (Line 195 to 200)
-# 10. Visualize
-# 11. Neural Network
-# 12. Parameter and optimizer
-# 13. Model evaluation
-# 14. Training
-# 15. Predict
+# 1. Basic autograd example 1               (Line 31 to 45)
+# 2. Basic autograd example 2               (Line 52 to 89)
+# 3. Loading data from numpy                (Line 96 to 103)
+# 4. Input pipline                          (Line 110 to 135)
+# 5. Input pipline for custom dataset       (Line 142 to 162)
+# 6. Pretrained model                       (Line 169 to 182)
+# 7. Save and load model                    (Line 189 to 195) 
+# 8. Create tensor                          (Line 201 to 254)
+# 9. Basic numpy operations                 (Line 260 to 299)
+# 10. Visualize                             (Line 305 to 315)
+# 11. Neural Network                        (Line 305 to 315)
+# 12. Parameter and optimizer               (Line 305 to 315)
+# 13. Model evaluation                      (Line 305 to 315)
+# 14. Training                              (Line 305 to 315)
+# 15. Predict                               (Line 305 to 315)
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
 # ================================================================== #
@@ -136,7 +136,7 @@ for images, labels in train_loader:
 
 
 # ================================================================== #
-#                5. Input pipeline for custom dataset                 #
+#                5. Input pipeline for custom dataset                #
 # ================================================================== #
 
 # You should build your custom dataset as below.
