@@ -19,6 +19,7 @@ import torchvision.transforms as transforms
 # 8. Create tensor                          (Line 195 to 200)
 # 9. Basic numpy operations                 (Line 195 to 200)
 # 10. Visualize
+# 11. Neural Network
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
 # ================================================================== #
@@ -308,4 +309,26 @@ def vis_data(x,y = None, c = 'r'):
 plt.figure()
 vis_data(x_train, y_train, c='r')
 plt.show()
+
+# ================================================================== #
+#                      11. Neural Network                            #
+# ================================================================== #
+
+class NeuralNet(torch.nn.Module):
+  def __init__(self, input_size, hidden_size):
+    super(NeuralNet, self).__init__()
+    self.input_size = input_size
+    self.hidden_size = hidden_size
+    self.linear_1 = torch.nn.Linear(self.input_size, self.hidden_size)
+    self.relu = torch.nn.ReLU()
+    self.linear_2 = torch.nn.Linear(self.hidden_size, 1)
+    self.sigmoid = torch.nn.Sigmoid()
+    
+  def forward(self, input_tensor):
+    linear1 = self.linear_1(input_tensor)
+    relu = self.relu(linear1)
+    linear2 = self.linear_2(relu)
+    output = self.sigmoid(linear2)
+    return output
+
         
