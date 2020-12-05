@@ -19,11 +19,11 @@ import torchvision.transforms as transforms
 # 8. Create tensor                          (Line 201 to 254)
 # 9. Basic numpy operations                 (Line 260 to 299)
 # 10. Visualize                             (Line 305 to 315)
-# 11. Neural Network                        (Line 305 to 315)
-# 12. Parameter and optimizer               (Line 305 to 315)
-# 13. Model evaluation                      (Line 305 to 315)
-# 14. Training                              (Line 305 to 315)
-# 15. Predict                               (Line 305 to 315)
+# 11. Neural Network                        (Line 321 to 336)
+# 12. Parameter and optimizer               (Line 342 to 346)
+# 13. Model evaluation                      (Line 352 to 354)
+# 14. Training                              (Line 360 to 368)
+# 15. Predict                               (Line 374 to 377)
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
 # ================================================================== #
