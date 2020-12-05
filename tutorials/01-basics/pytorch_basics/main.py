@@ -18,7 +18,7 @@ import torchvision.transforms as transforms
 # 7. Save and load model                    (Line 183 to 189) 
 # 8. Create tensor                          (Line 195 to 200)
 # 9. Basic numpy operations                 (Line 195 to 200)
-
+# 10. Visualize
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
 # ================================================================== #
@@ -292,3 +292,20 @@ b = np.reshape(a, (2, 6))
 print(b[0, 0]) # result "2"
 b[0, 0] = 77
 print(a[0, 0]) # result "77"
+
+# ================================================================== #
+#                      10. Visualize                                 #
+# ================================================================== #
+
+def vis_data(x,y = None, c = 'r'):
+  if y is None:
+    y = [None] * len(x)
+  for x_, y_ in zip(x,y):
+     if y_ is None:
+        plt.plot(x_[0], x_[1], '*', markerfacecolor='none', markeredgecolor=c)
+     else:
+        plt.plot(x_[0], x_[1], c+'o' if y_ ==0 else c+'+')
+plt.figure()
+vis_data(x_train, y_train, c='r')
+plt.show()
+        
