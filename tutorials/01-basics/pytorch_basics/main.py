@@ -9,15 +9,21 @@ import torchvision.transforms as transforms
 #                         Table of Contents                          #
 # ================================================================== #
 
-# 1. Basic autograd example 1               (Line 25 to 39)
+# 1. Basic autograd example 1               (Line 26 to 40)
 # 2. Basic autograd example 2               (Line 46 to 83)
 # 3. Loading data from numpy                (Line 90 to 97)
 # 4. Input pipline                          (Line 104 to 129)
 # 5. Input pipline for custom dataset       (Line 136 to 156)
 # 6. Pretrained model                       (Line 163 to 176)
 # 7. Save and load model                    (Line 183 to 189) 
-
-
+# 8. Create tensor                          (Line 195 to 200)
+# 9. Basic numpy operations                 (Line 195 to 200)
+# 10. Visualize
+# 11. Neural Network
+# 12. Parameter and optimizer
+# 13. Model evaluation
+# 14. Training
+# 15. Predict
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
 # ================================================================== #
@@ -187,3 +193,185 @@ model = torch.load('model.ckpt')
 # Save and load only the model parameters (recommended).
 torch.save(resnet.state_dict(), 'params.ckpt')
 resnet.load_state_dict(torch.load('params.ckpt'))
+
+# ================================================================== #
+#                      8. Tensor                                     #
+# ================================================================== #
+
+# Create tensors (t1 and t2 are same)
+t1 = torch.FloatTensor([0, 1, 2, 3, 4, 5, 6])
+t2 = torch.tensor(np.arange(7))
+
+# Print shape of tensors 
+print(t1.shape, t2.shape)
+
+# Broadcasting
+m1 = torch.FloatTensor([[3, 3]])
+m2 = torch.FloatTensor([[2, 2]])
+print(m1 + m2)
+
+# Vector + scalar
+m1 = torch.FloatTensor([[1, 2]])
+m2 = torch.FloatTensor([3])
+print(m1 + m2)
+
+# 2 x 1 Vector + 1 x 2 Vector
+m1 = torch.FloatTensor([[1, 2]])
+m2 = torch.FloatTensor([[3], [4]])
+print(m1 + m2)
+
+# Mul vs MatMul
+m1 = torch.FloatTensor([[1, 2], [3, 4]])
+m2 = torch.FloatTensor([[1], [2]])
+print('Shape of Matrix 1: ', m1.shape) # result 2 x 2
+print('Shape of Matrix 2: ', m2.shape) # result 2 x 1
+print(m1.matmul(m2)) # 2 x 1
+
+m1 = torch.FloatTensor([[1, 2], [3, 4]])
+m2 = torch.FloatTensor([[1], [2]])
+print('Shape of Matrix 1: ', m1.shape) # 2 x 2
+print('Shape of Matrix 2: ', m2.shape) # 2 x 1
+print(m1 * m2) # 2 x 2
+print(m1.mul(m2))
+
+# Mean
+t = torch.FloatTensor([[1, 2], [3, 4]]) 
+print(t.type())
+print(t)
+
+print(t.mean())
+print(t.mean(dim=0)) # Remove Dim 0
+print(t.mean(dim=1))
+print(t.mean(dim=-1))
+
+# View
+t = np.arange(12).reshape(-1, 2, 3)
+print(t.shape)
+
+floatT = torch.FloatTensor(t)
+print(floatT.shape)
+
+print(floatT.view([-1, 3]))
+
+# ================================================================== #
+#                      9. Basic numpy operations                     #
+# ================================================================== #
+
+# Create array with only '0' elements
+a = np.zeros((2,2))
+print(a)          # result "[[ 0.  0.]
+                  #          [ 0.  0.]]"
+
+# Create array with only '1' elements
+b = np.ones((1,2))
+print(b)          # result "[[ 1.  1.]
+                  
+
+
+# Fill array with specific number (in this case, 7)
+c = np.full((2,2), 7)
+print(c)          # result "[[ 7.  7.]
+                  #          [ 7.  7.]]"
+
+
+# Create 2x2 unit matrix
+d = np.eye(2)
+print(d)          # result "[[ 1.  0.]
+                  #          [ 0.  1.]]"
+
+
+# Create array filled with arbitrary values
+e = np.random.random((2,2))
+print(e)          # result "[[ 0.91940167  0.08143941]
+                  #          [ 0.68744134  0.87236687]]"
+                  # arbitrary values are filled
+
+# Numpy array slicing    
+a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+b = a[:2, 1:3]
+print(a[0,1]) # result "2"
+b[0, 0] = 77 # b[0,0] and a[0,1] are same
+print(a[0,1]) # result "77"
+# Reshaping method
+b = np.reshape(a, (2, 6))
+print(b[0, 0]) # result "2"
+b[0, 0] = 77
+print(a[0, 0]) # result "77"
+
+# ================================================================== #
+#                      10. Visualize                                 #
+# ================================================================== #
+
+def vis_data(x,y = None, c = 'r'):
+  if y is None:
+    y = [None] * len(x)
+  for x_, y_ in zip(x,y):
+     if y_ is None:
+        plt.plot(x_[0], x_[1], '*', markerfacecolor='none', markeredgecolor=c)
+     else:
+        plt.plot(x_[0], x_[1], c+'o' if y_ ==0 else c+'+')
+plt.figure()
+vis_data(x_train, y_train, c='r')
+plt.show()
+
+# ================================================================== #
+#                      11. Neural Network                            #
+# ================================================================== #
+
+class NeuralNet(torch.nn.Module):
+  def __init__(self, input_size, hidden_size):
+    super(NeuralNet, self).__init__()
+    self.input_size = input_size
+    self.hidden_size = hidden_size
+    self.linear_1 = torch.nn.Linear(self.input_size, self.hidden_size)
+    self.relu = torch.nn.ReLU()
+    self.linear_2 = torch.nn.Linear(self.hidden_size, 1)
+    self.sigmoid = torch.nn.Sigmoid()
+    
+  def forward(self, input_tensor):
+    linear1 = self.linear_1(input_tensor)
+    relu = self.relu(linear1)
+    linear2 = self.linear_2(relu)
+    output = self.sigmoid(linear2)
+    return output
+
+# ================================================================== #
+#                      12.  Parameter and optimizer                  #
+# ================================================================== #
+
+model = NeuralNet(2, 5)
+learning_rate = 0.03
+criterion = torch.nn.BCELoss()
+epochs = 2000
+optimizer = torch.optim.SGD(model.parameters(), lr = learning_rate)
+
+# ================================================================== #
+#                      13.  Model evaluation                         #
+# ================================================================== #
+
+model.eval()
+test_loss_before = criterion(model(x_test).squeeze(), y_test)
+print('Before Training, test loss is {}'.format(test_loss_before.item()))
+        
+# ================================================================== #
+#                      14.  Training                                 #
+# ================================================================== #
+
+for epoch in range(epochs):
+  model.train()
+  optimizer.zero_grad()
+  train_output = model(x_train)
+  train_loss = criterion(train_output.squeeze(), y_train)
+  if epoch % 100 == 0:
+    print('Train loss at {} is {}'.format(epoch, train_loss.item()))
+  train_loss.backward()
+  optimizer.step()
+  
+# ================================================================== #
+#                      15.  Predict                                  #
+# ================================================================== #
+
+new_model = NeuralNet(2, 5)
+new_model.load_state_dict(torch.load('./model.pt'))
+new_model.eval()
+print('벡터 [0, 1]이 레이블 1을 가질 확률은 {}'.format(new_model(torch.FloatTensor([0,1])).item()))
