@@ -200,6 +200,21 @@ t2 = torch.tensor(np.arange(7))
 # Print shape of tensors 
 print(t1.shape, t2.shape)
 
+# Broadcasting
+m1 = torch.FloatTensor([[3, 3]])
+m2 = torch.FloatTensor([[2, 2]])
+print(m1 + m2)
+
+# Vector + scalar
+m1 = torch.FloatTensor([[1, 2]])
+m2 = torch.FloatTensor([3])
+print(m1 + m2)
+
+# 2 x 1 Vector + 1 x 2 Vector
+m1 = torch.FloatTensor([[1, 2]])
+m2 = torch.FloatTensor([[3], [4]])
+print(m1 + m2)
+
 # ================================================================== #
 #                      9. Basic numpy operations                     #
 # ================================================================== #
