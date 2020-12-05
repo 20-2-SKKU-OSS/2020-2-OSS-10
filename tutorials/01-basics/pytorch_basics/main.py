@@ -190,7 +190,7 @@ torch.save(resnet.state_dict(), 'params.ckpt')
 resnet.load_state_dict(torch.load('params.ckpt'))
 
 # ================================================================== #
-#                      8. Create tensor                              #
+#                      8. Tensor                                     #
 # ================================================================== #
 
 # Create tensors (t1 and t2 are same)
