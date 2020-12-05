@@ -233,3 +233,11 @@ print(e)          # result "[[ 0.91940167  0.08143941]
                   #          [ 0.68744134  0.87236687]]"
                   # arbitrary values are filled
 
+# Numpy array slicing    
+a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+b = a[:2, 1:3]
+print(a[0,1]) # result "2"
+b[0, 0] = 77 # b[0,0] and a[0,1] are same
+print(a[0,1]) # result "77"
+    
+
