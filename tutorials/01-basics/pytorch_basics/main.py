@@ -20,6 +20,7 @@ import torchvision.transforms as transforms
 # 9. Basic numpy operations                 (Line 195 to 200)
 # 10. Visualize
 # 11. Neural Network
+# 12. Parameter and optimizer
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
 # ================================================================== #
@@ -331,4 +332,14 @@ class NeuralNet(torch.nn.Module):
     output = self.sigmoid(linear2)
     return output
 
+# ================================================================== #
+#                      12.  Parameter and optimizer                  #
+# ================================================================== #
+
+model = NeuralNet(2, 5)
+learning_rate = 0.03
+criterion = torch.nn.BCELoss()
+epochs = 2000
+optimizer = torch.optim.SGD(model.parameters(), lr = learning_rate)
+  
         
