@@ -23,6 +23,7 @@ import torchvision.transforms as transforms
 # 12. Parameter and optimizer
 # 13. Model evaluation
 # 14. Training
+# 15. Predict
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
 # ================================================================== #
@@ -365,3 +366,12 @@ for epoch in range(epochs):
     print('Train loss at {} is {}'.format(epoch, train_loss.item()))
   train_loss.backward()
   optimizer.step()
+  
+# ================================================================== #
+#                      15.  Predict                                  #
+# ================================================================== #
+
+new_model = NeuralNet(2, 5)
+new_model.load_state_dict(torch.load('./model.pt'))
+new_model.eval()
+print('벡터 [0, 1]이 레이블 1을 가질 확률은 {}'.format(new_model(torch.FloatTensor([0,1])).item()))
