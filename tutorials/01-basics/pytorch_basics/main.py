@@ -239,5 +239,8 @@ b = a[:2, 1:3]
 print(a[0,1]) # result "2"
 b[0, 0] = 77 # b[0,0] and a[0,1] are same
 print(a[0,1]) # result "77"
-    
-
+# Reshaping method
+b = np.reshape(a, (2, 6))
+print(b[0, 0]) # result "2"
+b[0, 0] = 77
+print(a[0, 0]) # result "77"
