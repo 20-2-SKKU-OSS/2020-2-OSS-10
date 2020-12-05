@@ -22,6 +22,7 @@ import torchvision.transforms as transforms
 # 11. Neural Network
 # 12. Parameter and optimizer
 # 13. Model evaluation
+# 14. Training
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
 # ================================================================== #
@@ -351,3 +352,16 @@ model.eval()
 test_loss_before = criterion(model(x_test).squeeze(), y_test)
 print('Before Training, test loss is {}'.format(test_loss_before.item()))
         
+# ================================================================== #
+#                      14.  Training                                 #
+# ================================================================== #
+
+for epoch in range(epochs):
+  model.train()
+  optimizer.zero_grad()
+  train_output = model(x_train)
+  train_loss = criterion(train_output.squeeze(), y_train)
+  if epoch % 100 == 0:
+    print('Train loss at {} is {}'.format(epoch, train_loss.item()))
+  train_loss.backward()
+  optimizer.step()
