@@ -229,6 +229,16 @@ print('Shape of Matrix 2: ', m2.shape) # 2 x 1
 print(m1 * m2) # 2 x 2
 print(m1.mul(m2))
 
+# Mean
+t = torch.FloatTensor([[1, 2], [3, 4]]) 
+print(t.type())
+print(t)
+
+print(t.mean())
+print(t.mean(dim=0)) # Remove Dim 0
+print(t.mean(dim=1))
+print(t.mean(dim=-1))
+
 # ================================================================== #
 #                      9. Basic numpy operations                     #
 # ================================================================== #
