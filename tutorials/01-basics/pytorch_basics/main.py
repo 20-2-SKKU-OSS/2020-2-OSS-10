@@ -239,6 +239,15 @@ print(t.mean(dim=0)) # Remove Dim 0
 print(t.mean(dim=1))
 print(t.mean(dim=-1))
 
+# View
+t = np.arange(12).reshape(-1, 2, 3)
+print(t.shape)
+
+floatT = torch.FloatTensor(t)
+print(floatT.shape)
+
+print(floatT.view([-1, 3]))
+
 # ================================================================== #
 #                      9. Basic numpy operations                     #
 # ================================================================== #
