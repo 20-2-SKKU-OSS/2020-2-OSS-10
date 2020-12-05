@@ -21,6 +21,7 @@ import torchvision.transforms as transforms
 # 10. Visualize
 # 11. Neural Network
 # 12. Parameter and optimizer
+# 13. Model evaluation
 # ================================================================== #
 #                     1. Basic autograd example 1                    #
 # ================================================================== #
@@ -341,5 +342,12 @@ learning_rate = 0.03
 criterion = torch.nn.BCELoss()
 epochs = 2000
 optimizer = torch.optim.SGD(model.parameters(), lr = learning_rate)
-  
+
+# ================================================================== #
+#                      13.  Model evaluation                         #
+# ================================================================== #
+
+model.eval()
+test_loss_before = criterion(model(x_test).squeeze(), y_test)
+print('Before Training, test loss is {}'.format(test_loss_before.item()))
         
