@@ -13,7 +13,7 @@ mnist_train = datasets.MNIST('./data',
                              train=True,
                              transform=transforms.Compose([
                                  transforms.ToTensor(), 
-                                 transforms.Normalize((0.1307,), (0.3081,)) 
+                                 transforms.Normalize((0.1307,), (0.3081,)) # Add normalization
                              ])) 
 
 mnist_test = datasets.MNIST('./data', 
@@ -21,7 +21,7 @@ mnist_test = datasets.MNIST('./data',
                              train=False,
                              transform= transforms.Compose([
                                transforms.ToTensor(),
-                               transforms.Normalize((0.1307, ),(0.3081, ))
+                               transforms.Normalize((0.1307, ),(0.3081, )) # Add normalization
                            ]))
 
 batch_size = 4
@@ -34,7 +34,7 @@ test_loader = torch.utils.data.DataLoader(mnist_test,
                                          shuffle=False)
 
 use_cuda = torch.cuda.is_available()
-
+# Convolutional neural network
 class CNNClassifier(nn.Module):
     
     def __init__(self):
