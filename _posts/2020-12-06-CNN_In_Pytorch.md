@@ -20,7 +20,7 @@ Convolution 연산을 위한 레이어들은 다음과 같다.
 - Conv3d
 위 3가지 API들은 내부 원리는 다 같다. 이번에는 자주 사용하는 Conv2d를 중점으로 설명을 진행할 것이다.
 
-### Parameters
+Parameters
 
 일단 Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=True, padding_mode='zeros')의 파라미터는 다음과 같다.
 
@@ -34,7 +34,7 @@ Convolution 연산을 위한 레이어들은 다음과 같다.
 - groups: 입력 층의 그룹 수를 설정하여 입력의 채널 수를 그룹 수에 맞게 분류 한다. 그 다음, 출력의 채널 수를 그룹 수에 맞게 분리하여, 입력 그룹과 출력 그룹의 짝을 지은 다음 해당 그룹 안에서만 연산이 이루어지게 한다.
 - bias: bias 값을 설정 할 지, 말지를 결정한다. 기본 값은 True이다.
 
-### Shape
+Shape
 
 Input Tensor(N, Cin, Hin, Win)의 모양과 Output Tensor(N, Cout, Hout, Wout)의 모양은 다음과 같다.
 
@@ -51,7 +51,7 @@ Input Tensor(N, Cin, Hin, Win)
  - Wout = ⌊(Win+2×padding[1]-dilation[1]×(kernel_size[1]-1)-1)/(stride[1]) +1⌋.
  
  
- ### Code Example
+ Code Example
  
  In
  
@@ -107,7 +107,7 @@ Pooling 연산을 위한 레이어들은 다음과 같다.
 
 위 6가지 API들은 차원 수, Pooling 연산의 방법을 제외하고는 다 같다. 이중에서 대표적인 MaxPool2d를 살펴보자.
 
-### Parameters
+Parameters
 
 일단 MaxPool2d(kernel_size, stride=None, padding=0, dilation=1, return_indices=False, ceil_mode=False)의 파라미터는 다음과 같다.
 
@@ -118,7 +118,7 @@ Pooling 연산을 위한 레이어들은 다음과 같다.
 - return_indices: True일 경우 최대 인덱스를 반환한다.
 - ceil_mode: True일 경우, Output Size에 대하여 바닥 함수 대신 천장 함수를 사용한다.
 
-### Shape
+Shape
 
 Input Tensor(N, Cin, Hin, Win)의 모양과 Output Tensor(N, Cout, Hout, Wout)의 모양은 다음과 같다.
 
@@ -134,9 +134,9 @@ Input Tensor(N, Cin, Hin, Win)
  - Hout = ⌊(Hin+2×padding[0]-dilation[0]×(kernel_size[0]-1)-1)/(stride[0]) +1⌋
  - Wout = ⌊(Win+2×padding[1]-dilation[1]×(kernel_size[1]-1)-1)/(stride[1]) +1⌋
  
- ### Code Example
+ Code Example
  
- - In
+ In
  
 ```
 import torch
@@ -169,7 +169,7 @@ cnn = CNN()
 output = cnn(torch.randn(10, 1, 20, 20))
 ```
 
-- Out
+Out
 
 ```
 연산 전 torch.Size([10, 1, 20, 20])
@@ -182,7 +182,7 @@ fc2 연산 후 torch.Size([1, 10])
 
 ### 2. MNIST 모델 학습
 
-1. 필요한 라이브러리들을 import한다.
+- 필요한 라이브러리들을 import한다.
 
 ```
 import torch
@@ -192,7 +192,7 @@ import torch.optim as optim
 from torchvision import datasets, transforms
 ```
 
-2. MNIST 데이터를 가져오기 위해, datasets를 사용 하고, 이를 Tensor 객체로 가공 하기 위해, transforms를 사용한다. Compose 함수를 이용해, Tensor로 가공 후, 정규화 또한 진행한다. MNIST 데이터를 배치 학습 시키기 위해, DataLoader를 사용 한다.
+- MNIST 데이터를 가져오기 위해, datasets를 사용 하고, 이를 Tensor 객체로 가공 하기 위해, transforms를 사용한다. Compose 함수를 이용해, Tensor로 가공 후, 정규화 또한 진행한다. MNIST 데이터를 배치 학습 시키기 위해, DataLoader를 사용 한다.
 ```
 train_data = datasets.MNIST('./data/', train=True, download=True, transform=transforms.Compose([
         transforms.ToTensor(),
@@ -207,7 +207,7 @@ test_data = datasets.MNIST('./data/', train=False, transform=transforms.Compose(
 test_loader = torch.utils.data.DataLoader(dataset=test_data, batch_size=50, shuffle=True)
 ```
 
-3. CNN 클래스를 선언한다.
+- CNN 클래스를 선언한다.
 ```
 class CNN(nn.Module):
     def __init__(self):
@@ -229,14 +229,14 @@ class CNN(nn.Module):
         return x
 ```
 
-4. CNN 객체와 optimizer, loss function 객체를 선언한다.
+- CNN 객체와 optimizer, loss function 객체를 선언한다.
 ```
 cnn = CNN()
 criterion = torch.nn.CrossEntropyLoss()
 optimizer = optim.SGD(cnn.parameters(), lr=0.01)
 ```
 
-5. 학습 코드를 실행해 준다. 배치로 변환된 data의 사이즈는 (50, 1, 28, 28)이고 target 사이즈는 (50)이다.
+- 학습 코드를 실행해 준다. 배치로 변환된 data의 사이즈는 (50, 1, 28, 28)이고 target 사이즈는 (50)이다.
 ```
 cnn.train()  # 학습을 위함
 for epoch in range(10):
@@ -250,7 +250,7 @@ for epoch in range(10):
     if index % 100 == 0:
       print("loss of {} epoch, {} index : {}".format(epoch, index, loss.item()))
 ```
-6. 결과를 확인한다.
+- 결과를 확인한다.
 ```
 cnn.eval()  # test case 학습 방지를 위함
 test_loss = 0
