@@ -193,6 +193,7 @@ from torchvision import datasets, transforms
 ```
 
 - MNIST 데이터를 가져오기 위해, datasets를 사용 하고, 이를 Tensor 객체로 가공 하기 위해, transforms를 사용한다. Compose 함수를 이용해, Tensor로 가공 후, 정규화 또한 진행한다. MNIST 데이터를 배치 학습 시키기 위해, DataLoader를 사용 한다.
+
 ```
 train_data = datasets.MNIST('./data/', train=True, download=True, transform=transforms.Compose([
         transforms.ToTensor(),
@@ -208,6 +209,7 @@ test_loader = torch.utils.data.DataLoader(dataset=test_data, batch_size=50, shuf
 ```
 
 - CNN 클래스를 선언한다.
+
 ```
 class CNN(nn.Module):
     def __init__(self):
@@ -230,6 +232,7 @@ class CNN(nn.Module):
 ```
 
 - CNN 객체와 optimizer, loss function 객체를 선언한다.
+
 ```
 cnn = CNN()
 criterion = torch.nn.CrossEntropyLoss()
@@ -237,6 +240,7 @@ optimizer = optim.SGD(cnn.parameters(), lr=0.01)
 ```
 
 - 학습 코드를 실행해 준다. 배치로 변환된 data의 사이즈는 (50, 1, 28, 28)이고 target 사이즈는 (50)이다.
+
 ```
 cnn.train()  # 학습을 위함
 for epoch in range(10):
@@ -251,6 +255,7 @@ for epoch in range(10):
       print("loss of {} epoch, {} index : {}".format(epoch, index, loss.item()))
 ```
 - 결과를 확인한다.
+
 ```
 cnn.eval()  # test case 학습 방지를 위함
 test_loss = 0
