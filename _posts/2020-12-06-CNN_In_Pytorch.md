@@ -180,7 +180,7 @@ fc1 연산 후 torch.Size([1, 50])
 fc2 연산 후 torch.Size([1, 10])
 ```
 
-### 2. MNIST 모델 학습
+### 3. MNIST 모델 학습
 
 - 필요한 라이브러리들을 import한다.
 
