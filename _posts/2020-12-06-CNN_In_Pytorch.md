@@ -51,6 +51,7 @@ Input Tensor(N, Cin, Hin, Win)
  - Wout = ⌊(Win+2×padding[1]-dilation[1]×(kernel_size[1]-1)-1)/(stride[1]) +1⌋
  
  ### Code Example
+ 
  - In
 ```
 import torch
@@ -131,7 +132,9 @@ Input Tensor(N, Cin, Hin, Win)
  - Wout = ⌊(Win+2×padding[1]-dilation[1]×(kernel_size[1]-1)-1)/(stride[1]) +1⌋
  
  ### Code Example
+ 
  - In
+ 
 ```
 import torch
 import torch.nn as nn
@@ -162,7 +165,9 @@ class CNN(nn.Module):
 cnn = CNN()
 output = cnn(torch.randn(10, 1, 20, 20))
 ```
+
 - Out
+
 ```
 연산 전 torch.Size([10, 1, 20, 20])
 max_pool1 연산 후 torch.Size([10, 1, 10, 10])
@@ -171,8 +176,11 @@ max_pool2 연산 후 torch.Size([10, 1, 5, 5])
 fc1 연산 후 torch.Size([1, 50])
 fc2 연산 후 torch.Size([1, 10])
 ```
+
 ### 2. MNIST 모델 학습
+
 1. 필요한 라이브러리들을 import한다.
+
 ```
 import torch
 import torch.nn as nn
