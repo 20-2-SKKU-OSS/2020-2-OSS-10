@@ -48,9 +48,10 @@ Input Tensor(N, Cin, Hin, Win)
  - N: batch의 크기
  - Cout: out_channels에 넣은 값과 일치
  - Hout = ⌊(Hin+2×padding[0]-dilation[0]×(kernel_size[0]-1)-1)/(stride[0]) +1⌋
- - Wout = ⌊(Win+2×padding[1]-dilation[1]×(kernel_size[1]-1)-1)/(stride[1]) +1⌋
+ - Wout = ⌊(Win+2×padding[1]-dilation[1]×(kernel_size[1]-1)-1)/(stride[1]) +1⌋.
  
- ### Code 
+ 
+ ### Code Example
  
  In
  
