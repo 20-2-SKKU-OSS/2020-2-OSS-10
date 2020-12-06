@@ -50,9 +50,10 @@ Input Tensor(N, Cin, Hin, Win)
  - Hout = ⌊(Hin+2×padding[0]-dilation[0]×(kernel_size[0]-1)-1)/(stride[0]) +1⌋
  - Wout = ⌊(Win+2×padding[1]-dilation[1]×(kernel_size[1]-1)-1)/(stride[1]) +1⌋
  
- Code Example
+ ### Code Example
  
- - In
+ In
+ 
 ```
 import torch
 import torch.nn as nn
@@ -83,7 +84,8 @@ class CNN(nn.Module):
 cnn = CNN()
 output = cnn(torch.randn(10, 1, 20, 20))  # Input Size: (10, 1, 20, 20)
 ```
-- Out
+Out
+
 ```
 연산 전 torch.Size([10, 1, 20, 20])
 conv1 연산 후 torch.Size([10, 3, 16, 16])
